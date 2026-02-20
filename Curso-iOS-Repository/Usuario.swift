@@ -1,20 +1,11 @@
 //
-//  ContentView.swift
+//  Usuario.swift
 //  Curso-iOS-Repository
 //
 //  Created by Equipo 2 on 20/2/26.
 //
 
-import SwiftUI
 import SwiftData
-
-// Usamos este struct para leer datos de la API REST
-struct UsuarioDTO: Codable {
-    let id: Int
-    let name: String
-    let username: String
-    let email: String
-}
 
 @Model
 class Usuario {
@@ -39,26 +30,4 @@ class Usuario {
     convenience init(from dto: UsuarioDTO) {
         self.init(id: dto.id, nombre: dto.name, nombreUsuario: dto.username, email: dto.email)
     }
-}
-
-
-
-
-
-
-
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
-
-#Preview {
-    ContentView()
 }
